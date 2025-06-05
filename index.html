@@ -3,31 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Path Finding Visualizer</title>
+    <title>Pathfinding Visualizer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
         <h1>Pathfinding Visualizer</h1>
         
-        <label>Choose your Maze Type</label>
-        <select id="mazegenerator">
-            <option value="manual">Mark Cells Manually</option>
-            <option value="random">Random Maze Generator</option>
-        </select>
+        <div class="controls">
+            <div class="subcontainer">
+                <label for="mazeAlgorithm">Maze Algorithm:</label>
+                <select id="mazeAlgorithm">
+                    <option value="random">Random Maze</option>
+                </select>
+            </div>
+            
+            <div class="subcontainer">
+                <label for="pathAlgorithm">Pathfinding Algorithm:</label>
+                <select id="pathAlgorithm">
+                    <option value="bfs">Breadth-First Search</option>
+                    <option value="astar">A* Search</option>
+                </select>
+            </div>
+            
+            <button id="generateMaze">Generate Maze</button>
+            <button id="clearMaze">Clear Maze</button>
+            <button id="findPath">Find Path</button>
+            <button id="clearPath">Clear Path</button>
+        </div>
         
-        <label>Choose Path Finding Algorithm</label>
-        <select id="mazesolver">
-            <option value="bfs">BFS</option>
-        </select>
+        <div class="info">
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color start"></div>
+                    <span>Start</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color end"></div>
+                    <span>End</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color wall"></div>
+                    <span>Wall</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color visited"></div>
+                    <span>Visited</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color path"></div>
+                    <span>Final Path</span>
+                </div>
+            </div>
+        </div>
         
-        <button id="startbtn">Start</button>
+        <div id="grid"></div>
     </div>
-    <hr>
     
-    <div class="grid" id="grid"></div>
-
     <script src="script.js"></script>
 </body>
 </html>
