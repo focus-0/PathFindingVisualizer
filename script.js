@@ -24,8 +24,7 @@ function createGrid(rows, cols) {
     }
 }
 
-// Call the function
-createGrid(40, 40);
+createGrid(30, 30);
 
 
 
